@@ -61,7 +61,7 @@ Finaly we have a Grafana dashboard to visualize the data from this exporter. The
 | GUI |     Services: DHCP: Kea(v4)      |
 | GUI |     Services: DHCP: Kea(v6)      |
 
-> **Note:** The temperature collector calls `api/diagnostics/system/systemTemperature`. On current OPNsense releases this URL is not covered by a dedicated GUI privilege, so a least privilege API user may receive `403` for it. Grant the `Lobby: Dashboard` privilege or disable the collector with `--exporter.disable-temperature` if that happens. Boxes without thermal sensors (most VMs) and releases without the endpoint simply report no temperature metrics.
+> **Note:** The temperature collector calls `api/diagnostics/system/system_temperature`, which OPNsense covers with the `Lobby: Dashboard` privilege. Grant that privilege to the API user, or disable the collector with `--exporter.disable-temperature`. Boxes without thermal sensors (most VMs) and releases without the endpoint simply report no temperature metrics.
 
 ## OPNsense settings
 
